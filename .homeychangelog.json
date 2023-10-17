@@ -1,0 +1,20 @@
+{
+  "0.0.1": {
+    "en": "Init"
+  },
+  "1.0.0": {
+    "en": "NEW: release app"
+  },
+  "1.0.1": {
+    "en": "NEW: branding "
+  },
+  "1.0.2": {
+    "en": "NEW: Branding"
+  },
+  "1.0.3": {
+    "en": "FIX: branding"
+  },
+  "1.0.4": {
+    "en": "FIX: add support links"
+  }
+}

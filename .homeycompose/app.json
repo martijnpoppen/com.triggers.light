@@ -1,0 +1,73 @@
+{
+  "id": "com.trigger.lights",
+  "version": "1.0.4",
+  "compatibility": ">=5.0.0",
+  "sdk": 3,
+  "permissions": [
+    "homey:manager:api"
+  ],
+  "brandColor": "#88ACA1",
+  "name": {
+    "en": "Light Triggers"
+  },
+  "description": {
+    "en": "Control your lights with Flows."
+  },
+  "tags": {
+    "en": [
+      "Flows",
+      "Control",
+      "Official",
+      "Homey",
+      "Athom",
+      "Apps",
+      "Devices",
+      "Lights",
+      "Hue",
+      "Hex",
+      "Saturation",
+      "Temperature",
+      "Flowcards"
+    ]
+  },
+  "category": [
+    "tools"
+  ],
+  "images": {
+    "large": "/assets/images/large.jpg",
+    "small": "/assets/images/small.jpg"
+  },
+  "author": {
+    "name": "Martijn Poppen",
+    "email": "lighttriggers@martijnpoppen.nl"
+  },
+  "contributors": {
+    "developers": [
+      {
+        "name": "Martijn Poppen",
+        "email": "lighttriggers@martijnpoppen.nl"
+      }
+    ],
+    "translators": [
+      {
+        "name": "🇬🇧 Martijn Poppen"
+      }
+    ]
+  },
+  "contributing": {
+    "donate": {
+      "paypal": {
+        "username": "martijnpoppen"
+      },
+      "bunq": {
+        "username": "martijnpoppen"
+      }
+    }
+  },
+  "bugs": {
+    "url": "https://community.homey.app/t/app-pro-light-triggers/92064"
+  },
+  "source": "https://github.com/martijnpoppen/com.triggers.light",
+  "homeyCommunityTopicId": 92064,
+  "support": "https://community.homey.app/t/app-pro-light-triggers/92064"
+}

@@ -1,0 +1,41 @@
+{
+    "id": "trigger_DEVICE_SATURATION",
+  "title": {
+    "en": "Light Saturation has changed"
+  },
+  "titleFormatted": {
+    "en": "[[device]] Saturation has changed"
+  },
+  "tokens": [
+    {
+      "name": "name",
+      "type": "string",
+      "title": {
+        "en": "Name"
+      }
+    },
+    {
+      "name": "value",
+      "type": "number",
+      "title": {
+        "en": "Value"
+      }
+    },
+    {
+      "name": "id",
+      "type": "string",
+      "title": {
+        "en": "ID"
+      }
+    }
+  ],
+  "args": [
+    {
+      "name": "device",
+      "type": "autocomplete",
+      "placeholder": {
+        "en": "Light"
+      }
+    }
+  ]
+}

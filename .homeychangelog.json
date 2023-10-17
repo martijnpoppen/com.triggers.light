@@ -16,5 +16,8 @@
   },
   "1.0.4": {
     "en": "FIX: add support links"
+  },
+  "1.0.5": {
+    "en": "FIX: map device"
   }
 }

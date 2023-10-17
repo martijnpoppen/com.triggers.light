@@ -19,5 +19,8 @@
   },
   "1.0.5": {
     "en": "FIX: map device"
+  },
+  "1.0.6": {
+    "en": "FIX: catch errors"
   }
 }

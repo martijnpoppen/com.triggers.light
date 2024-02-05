@@ -25,5 +25,8 @@
   },
   "1.1.0": {
     "en": "NEW: add any flowcard. Allowing to use a single card for multiple triggers"
+  },
+  "1.1.1": {
+    "en": "FIX: small bug in flow trigger"
   }
 }

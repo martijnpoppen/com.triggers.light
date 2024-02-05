@@ -1,10 +1,13 @@
 {
-  "id": "trigger_DEVICE_HUE",
+  "id": "trigger_DEVICE_ANY",
   "title": {
-    "en": "Light Hue has changed"
+    "en": "Light: Anything has changed"
   },
   "titleFormatted": {
-    "en": "[[device]] Hue has changed"
+    "en": "[[device]]: Anything has changed"
+  },
+  "hint": {
+    "en": "Triggered when any property of the selected device changes (e.g. on/off, dim, hue, saturation, temperature)"
   },
   "tokens": [
     {

@@ -1,0 +1,22 @@
+{
+  "id": "action_DEVICE_ANY",
+  "platforms": ["local"],
+  "title": {
+    "en": "Passtrough trigger to light"
+  },
+  "titleFormatted": {
+    "en": "Passtrough trigger to [[device]]"
+  },
+  "hint": {
+    "en": "This will send the trigger to the selected device. e.g. a light turned on, then this card can passtrough the same action to the selected light."
+  },
+  "args": [
+    {
+      "name": "device",
+      "type": "autocomplete",
+      "placeholder": {
+        "en": "Light"
+      }
+    }
+  ]
+}

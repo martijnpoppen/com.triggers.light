@@ -1,5 +1,5 @@
 {
-    "id": "trigger_DEVICE_SATURATION",
+  "id": "trigger_DEVICE_SATURATION",
   "title": {
     "en": "Light Saturation has changed"
   },
@@ -19,6 +19,13 @@
       "type": "number",
       "title": {
         "en": "Value"
+      }
+    },
+    {
+      "name": "capability",
+      "type": "string",
+      "title": {
+        "en": "Capability"
       }
     },
     {

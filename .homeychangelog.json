@@ -22,5 +22,8 @@
   },
   "1.0.6": {
     "en": "FIX: catch errors"
+  },
+  "1.1.0": {
+    "en": "NEW: add any flowcard. Allowing to use a single card for multiple triggers"
   }
 }

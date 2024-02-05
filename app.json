@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.trigger.lights",
-  "version": "1.0.6",
+  "version": "1.1.0",
   "compatibility": ">=5.0.0",
   "sdk": 3,
   "permissions": [
@@ -74,6 +74,57 @@
   "flow": {
     "triggers": [
       {
+        "id": "trigger_DEVICE_ANY",
+        "title": {
+          "en": "Light: Anything has changed"
+        },
+        "titleFormatted": {
+          "en": "[[device]]: Anything has changed"
+        },
+        "hint": {
+          "en": "Triggered when any property of the selected device changes (e.g. on/off, dim, hue, saturation, temperature)"
+        },
+        "tokens": [
+          {
+            "name": "name",
+            "type": "string",
+            "title": {
+              "en": "Name"
+            }
+          },
+          {
+            "name": "value",
+            "type": "number",
+            "title": {
+              "en": "Value"
+            }
+          },
+          {
+            "name": "capability",
+            "type": "string",
+            "title": {
+              "en": "Capability"
+            }
+          },
+          {
+            "name": "id",
+            "type": "string",
+            "title": {
+              "en": "ID"
+            }
+          }
+        ],
+        "args": [
+          {
+            "name": "device",
+            "type": "autocomplete",
+            "placeholder": {
+              "en": "Light"
+            }
+          }
+        ]
+      },
+      {
         "id": "trigger_DEVICE_HUE",
         "title": {
           "en": "Light Hue has changed"
@@ -94,6 +145,13 @@
             "type": "number",
             "title": {
               "en": "Value"
+            }
+          },
+          {
+            "name": "capability",
+            "type": "string",
+            "title": {
+              "en": "Capability"
             }
           },
           {
@@ -138,6 +196,13 @@
             }
           },
           {
+            "name": "capability",
+            "type": "string",
+            "title": {
+              "en": "Capability"
+            }
+          },
+          {
             "name": "id",
             "type": "string",
             "title": {
@@ -179,6 +244,13 @@
             }
           },
           {
+            "name": "capability",
+            "type": "string",
+            "title": {
+              "en": "Capability"
+            }
+          },
+          {
             "name": "id",
             "type": "string",
             "title": {
@@ -186,6 +258,32 @@
             }
           }
         ],
+        "args": [
+          {
+            "name": "device",
+            "type": "autocomplete",
+            "placeholder": {
+              "en": "Light"
+            }
+          }
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "id": "action_DEVICE_ANY",
+        "platforms": [
+          "local"
+        ],
+        "title": {
+          "en": "Passtrough trigger to light"
+        },
+        "titleFormatted": {
+          "en": "Passtrough trigger to [[device]]"
+        },
+        "hint": {
+          "en": "This will send the trigger to the selected device. e.g. a light turned on, then this card can passtrough the same action to the selected light."
+        },
         "args": [
           {
             "name": "device",

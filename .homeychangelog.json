@@ -31,5 +31,8 @@
   },
   "1.1.2": {
     "en": "FIX: some lights not showing up in action card"
+  },
+  "1.1.3": {
+    "en": "FIX: prevent ghost changes for some zigbee lights"
   }
 }

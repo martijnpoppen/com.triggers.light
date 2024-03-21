@@ -41,31 +41,31 @@ class App extends Homey.App {
         for (const device of this.DEVICES) {
             try {
                 if (device.class === 'light' || (device.virtualClass === 'light' && device.capabilitiesObj)) {
-                    if (device.capabilitiesObj && device.capabilitiesObj.light_temperature) {
+                    if (device.capabilities.includes('light_temperature')) {
                         device.makeCapabilityInstance('light_temperature', (value) => {
                             this.triggerFlow(device, 'light_temperature', value, 'DEVICE_TEMP');
                         });
                     }
 
-                    if (device.capabilitiesObj && device.capabilitiesObj.light_saturation) {
+                    if (device.capabilities.includes('light_saturation')) {
                         device.makeCapabilityInstance('light_saturation', (value) => {
                             this.triggerFlow(device, 'light_saturation', value, 'DEVICE_SATURATION');
                         });
                     }
 
-                    if (device.capabilitiesObj && device.capabilitiesObj.light_hue) {
+                    if (device.capabilities.includes('light_hue')) {
                         device.makeCapabilityInstance('light_hue', (value) => {
                             this.triggerFlow(device, 'light_hue', value, 'DEVICE_HUE');
                         });
                     }
 
-                    if (device.capabilitiesObj && device.capabilitiesObj.onoff) {
+                    if (device.capabilities.includes('onoff')) {
                         device.makeCapabilityInstance('onoff', (value) => {
                             this.triggerFlow(device, 'onoff', value);
                         });
                     }
 
-                    if (device.capabilitiesObj && device.capabilitiesObj.dim) {
+                    if (device.capabilities.includes('dim')) {
                         device.makeCapabilityInstance('dim', (value) => {
                             this.triggerFlow(device, 'dim', value);
                         });
@@ -81,20 +81,26 @@ class App extends Homey.App {
         this.log(`[Device][triggerFlow]`, device.name, capability, value);
 
         if (flowName) {
-            this.homey.app.trigger_[flowName]
+            const flow = `trigger_${flowName}`;
+            this.homey.app[flow]
                 .trigger({ name: device.name, id: device.id, value: value, capability }, { name: device.name, id: device.id, value: value, device: device, capability })
                 .catch((err) => this.error(`[Device][trigger_${flowName}]`, err))
-                .then(this.log(`[trigger_DEVICE_HUE] - Triggered - ${device.name} - ${value}`));
+                .then(this.log(`[${flow}] - Triggered - ${device.name} - ${capability} - ${value}`));
         }
 
         if(capability === 'onoff') {
             value = Number(value);
         }
 
+        if(capability === 'dim' && device.capabilitiesObj && device.capabilitiesObj.onoff && !device.capabilitiesObj.onoff.value) {
+            this.log(`[Device][triggerFlow] Dim capability is enabled but OnOff capability is disabled`, device.capabilitiesObj.onoff);
+            return
+        }
+
         this.homey.app.trigger_DEVICE_ANY
             .trigger({ name: device.name, id: device.id, value: value, capability }, { name: device.name, id: device.id, value: value, device: device, capability })
             .catch((err) => this.error(`[Device][trigger_DEVICE_ANY]`, err))
-            .then(this.log(`[trigger_DEVICE_ANY] - Triggered - ${device.name} - ${value}`));
+            .then(this.log(`[trigger_DEVICE_ANY] - Triggered - ${device.name} - ${capability} - ${value}`));
     }
 }
 
